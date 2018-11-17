@@ -2,7 +2,7 @@
  * Created by Administrator on 2018/11/16.
  */
 //工具包
-const  {parseString} = require('xml2js')
+const {parseString} = require('xml2js')
 module.exports = {
   getUserDataAsync (req){
     return new Promise(resolve => {
