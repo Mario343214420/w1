@@ -2,11 +2,12 @@
  * Created by Administrator on 2018/11/17.
  */
 const sha1 = require('sha1');
-const {getUserDataAsync, parseXMLDataAsync, formatMessage} = require('./utils/tools')
-const reply = require('./reply/reply')
-const template = require('./reply/template')
+const {getUserDataAsync, parseXMLDataAsync, formatMessage} = require('../utils/tools')
+const reply = require('./reply')
+const template = require('./template')
+const {token} = require('../config')
 module.exports = () =>{
-  app.use(async (req, res, next) => {
+  return async (req, res, next) => {
     console.log(req.query)
     const {signature, echostr, timestamp, nonce} = req.query;
     const {token} = config
@@ -42,5 +43,5 @@ module.exports = () =>{
   
     }
   
-  })
+  }
 }
