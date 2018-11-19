@@ -5,7 +5,7 @@ const sha1 = require('sha1');
 const {getUserDataAsync, parseXMLDataAsync, formatMessage} = require('../utils/tools')
 const reply = require('./reply')
 const template = require('./template')
-const {token} = require('../config')
+const {token} = require('../config/index')
 module.exports = () =>{
   return async (req, res, next) => {
     console.log(req.query)
