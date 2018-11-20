@@ -1,5 +1,5 @@
 /*
-  工具方法
+ 工具方法
  */
 const {parseString} = require('xml2js');
 
@@ -45,5 +45,27 @@ module.exports = {
     }
     
     return result;
+  },
+  writeFileAsync (filePath, data) {
+    return new Promise((resolve, reject) => {
+      writeFile(filePath, JSON.stringify(data), err => {
+        if(!err){
+          resolve()
+        }else{
+          reject('writeFileAsync方法出错:'+err)
+        }
+      })
+    })
+  },
+  readFileAsync (filePath) {
+    return new Promise((resolve, reject) => {
+      readFile(filePath, (err,data) => {
+        if(!err){
+          resolve(JSON.parse(data,toString()))
+        }else{
+          reject('readFileAsync方法出错:'+err)
+        }
+      })
+    })
   }
 }
